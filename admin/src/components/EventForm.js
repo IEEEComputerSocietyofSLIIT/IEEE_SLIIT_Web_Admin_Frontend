@@ -54,7 +54,7 @@ function EventForm() {
 
     try {
       const token = localStorage.getItem('token'); // Retrieve the token from local storage
-      const response = await axios.post('http://localhost:3001/api/add/events', formData, {
+      const response = await axios.post('http://localhost:3000/api/add/events', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`, // Add the authorization token here

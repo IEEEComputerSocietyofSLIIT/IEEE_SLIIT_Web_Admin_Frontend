@@ -15,12 +15,12 @@ function ViewEvents() {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
 
-  const baseURL = 'http://localhost:3001'; // Ensure no trailing slash
+  const baseURL = 'http://localhost:3000'; // Ensure no trailing slash
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/getAllEvents');
+        const response = await axios.get('http://localhost:3000/api/getAllEvents');
         setEvents(response.data);
         console.log(response.data);
       } catch (error) {
@@ -33,7 +33,7 @@ function ViewEvents() {
 
   const handleDelete = async (eventId) => {
     try {
-      await axios.delete(`http://localhost:3001/api/remove/${eventId}`);
+      await axios.delete(`http://localhost:3000/api/remove/${eventId}`);
       console.log(`Event with ID ${eventId} deleted`);
       setEvents(events.filter(event => event._id !== eventId));
       setSnackbarMessage('Event deleted successfully!');
