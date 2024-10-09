@@ -35,7 +35,7 @@ function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/admin/login', { email, password });
+      const response = await axios.post('http://localhost:3001/auth/admin/login', { email, password });
       if (response.status === 200 && response.data.success) {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('adminType', response.data.adminType); // Store adminType
